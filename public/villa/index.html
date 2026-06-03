@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skyline Villa — Crafted Upon Your Vision</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&family=Playfair+Display:ital@1&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-logo">
+      <span class="logo-mark">SV</span>
+      <span class="logo-text">Skyline Villa</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#philosophy">Philosophy</a></li>
+      <li><a href="#villas">Residences</a></li>
+      <li><a href="#process">Our Process</a></li>
+      <li><a href="#team">Designers</a></li>
+      <li><a href="#contact">Begin</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="#contact" class="btn-nav">Begin Your Vision</a>
+    </div>
+    <button class="nav-burger" id="navBurger" aria-label="Menu">
+      <span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#philosophy" class="mm-link">Philosophy</a></li>
+      <li><a href="#villas" class="mm-link">Residences</a></li>
+      <li><a href="#process" class="mm-link">Our Process</a></li>
+      <li><a href="#team" class="mm-link">Designers</a></li>
+      <li><a href="#contact" class="mm-link">Begin Your Vision</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <img src="../assets/villa.jpeg" alt="Skyline Villa exterior" class="hero-img" onerror="this.style.display='none'" />
+      <div class="hero-overlay"></div>
+      <div class="hero-grain"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow reveal-up delay-1">Modern Architecture · Bespoke Design</p>
+      <h1 class="hero-headline reveal-up delay-2">
+        Where the Sky<br /><em>Becomes Home</em>
+      </h1>
+      <p class="hero-sub reveal-up delay-3">
+        Every villa we craft begins not with a blueprint, but with a conversation.<br />
+        Your vision is the only brief we accept.
+      </p>
+      <div class="hero-actions reveal-up delay-4">
+        <a href="#villas" class="btn-primary">Explore Residences</a>
+        <a href="#process" class="btn-ghost">See How We Build</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span class="scroll-line"></span>
+      <span class="scroll-label">Scroll</span>
+    </div>
+    <div class="hero-stat-strip reveal-up delay-5">
+      <div class="stat"><span class="stat-n">47</span><span class="stat-l">Villas Delivered</span></div>
+      <div class="stat-div"></div>
+      <div class="stat"><span class="stat-n">100%</span><span class="stat-l">Client-Described</span></div>
+      <div class="stat-div"></div>
+      <div class="stat"><span class="stat-n">12+</span><span class="stat-l">Years of Mastery</span></div>
+      <div class="stat-div"></div>
+      <div class="stat"><span class="stat-n">0</span><span class="stat-l">Pre-set Plans Used</span></div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY STRIP -->
+  <section class="marquee-section">
+    <div class="marquee-track">
+      <span>Precision Without Preconception &nbsp;·&nbsp; </span>
+      <span>Built on Dialogue, Not Templates &nbsp;·&nbsp; </span>
+      <span>Your Words. Our Craft. &nbsp;·&nbsp; </span>
+      <span>Sky-High Living, Ground-Up Honesty &nbsp;·&nbsp; </span>
+      <span>Precision Without Preconception &nbsp;·&nbsp; </span>
+      <span>Built on Dialogue, Not Templates &nbsp;·&nbsp; </span>
+      <span>Your Words. Our Craft. &nbsp;·&nbsp; </span>
+      <span>Sky-High Living, Ground-Up Honesty &nbsp;·&nbsp; </span>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY -->
+  <section class="philosophy" id="philosophy">
+    <div class="container">
+      <div class="phil-grid">
+        <div class="phil-left reveal-left">
+          <p class="section-tag">Our Belief</p>
+          <h2 class="section-headline">Architecture that<br /><em>listens first</em></h2>
+        </div>
+        <div class="phil-right reveal-right">
+          <p class="phil-para">
+            We carry no portfolio of floor plans. We hold no catalogue of preconceived forms. When you arrive at Skyline Villa, you do not choose from options — you speak, and we begin.
+          </p>
+          <p class="phil-para">
+            Our designers and master builders believe that a home should be the most honest expression of the person who inhabits it. The skyline changes for each client because no two clients share the same sky.
+          </p>
+          <p class="phil-para highlight-para">
+            Every line drawn, every material selected, every light considered — all of it originates from a single source: <strong>your description</strong>. We are not interpreters of trends. We are translators of <em>you</em>.
+          </p>
+        </div>
+      </div>
+      <div class="phil-pillars reveal-up">
+        <div class="pillar">
+          <div class="pillar-icon">⬡</div>
+          <h3>Zero Templates</h3>
+          <p>No pre-drawn plan touches your project. Every sketch begins the day you describe your life to us.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">⬡</div>
+          <h3>Surgical Precision</h3>
+          <p>Our builders work to millimetre tolerances. The gap between vision and reality closes to nothing.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">⬡</div>
+          <h3>Unhurried Excellence</h3>
+          <p>We accept only as many commissions as we can perfect. You will never be rushed. Neither will your home.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">⬡</div>
+          <h3>Total Transparency</h3>
+          <p>Every decision is yours. We document, present, and await your word before a single nail is driven.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VILLAS -->
+  <section class="villas" id="villas">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <p class="section-tag">Completed Residences</p>
+        <h2 class="section-headline">Homes Grown from<br /><em>Singular Voices</em></h2>
+        <p class="section-sub">Each of these villas was born entirely from its owner's words. No two share a wall, a roofline, or a philosophy.</p>
+      </div>
+
+      <div class="villa-grid">
+
+        <!-- Card 1 -->
+        <article class="villa-card reveal-up delay-1">
+          <div class="vc-img-wrap">
+            <img src="../assets/villa1.jpeg" alt="The Meridian" onerror="this.parentElement.classList.add('img-fallback')" />
+            <div class="vc-tag">Cliff-Edge · 4 Bed</div>
+          </div>
+          <div class="vc-body">
+            <h3 class="vc-name">Mixed Cladding Gable</h3>
+            <p class="vc-location">MODERN ELEGANCE, KOTTAYAM</p>
+            <p class="vc-desc">Designed for families who value privacy without sacrificing light. The brief was simple: "space that breathes." We answered with a villa where brick meets clean lines — horizontal cladding frames sunlit rooms, while the gable roof nods to Kerala tradition. The first-floor balcony opens to morning skies, and the wide sit-out welcomes evening conversations. Teak-framed windows and stone pillars ground every space.</p>
+            <div class="vc-specs">
+              <span>185 m²</span>
+              <span>Double-height Porch</span>
+              <span>Glass Rail Balcony</span>
+              <span>Landscaped Courtyard</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="villa-card reveal-up delay-2">
+          <div class="vc-img-wrap">
+            <img src="../assets/villa2.jpeg" alt="Casa Nimbus" onerror="this.parentElement.classList.add('img-fallback')" />
+            <div class="vc-tag">Hillside · 6 Bed</div>
+          </div>
+          <div class="vc-body">
+            <h3 class="vc-name">Urban Sanctuary </h3>
+            <p class="vc-location">CLOUD-WHITE COMPOUND,THIRUVALLA</p>
+            <p class="vc-desc">Conceived for a young family who asked for "calm in the chaos." We dissolved the boundary between built and green — louvered verticals cast shifting shadows across white walls, while red brick adds warmth without weight. Living spaces flow into the tiled courtyard, and the gable crown draws the eye upward. Inside, every room meets the garden. Outside, flowering beds soften the geometry.</p>
+            <div class="vc-specs">
+              <span>170 m²</span>
+              <span>Wrap Verandah</span>
+              <span>Private Spa</span>
+              <span>Central Courtyard</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="villa-card reveal-up delay-3">
+          <div class="vc-img-wrap">
+            <img src="../assets/villa3.jpg" alt="Zephyr House" onerror="this.parentElement.classList.add('img-fallback')" />
+            <div class="vc-tag">LUXURY CLASSIC· 5 Bed</div>
+          </div>
+          <div class="vc-body">
+            <h3 class="vc-name">Villa Aurea</h3>
+            <p class="vc-location">PALATIAL RETREAT, TRIVANDRUM</p>
+            <p class="vc-desc">Built for those who entertain without effort and unwind without compromise. The brief: "a home that feels like a resort." We responded with sweeping gabled roofs, twin balconies, and colonnaded verandas that frame every sunrise. Cream walls and stone cladding stay cool under tropical skies, while wide overhangs shield from monsoon rains. The manicured lawn and palm court create arrival; the double-height foyer creates awe.</p>
+            <div class="vc-specs">
+              <span>320 m²</span>
+              <span>Dual Balconies</span>
+              <span>Collonaded sit-out</span>
+              <span>Landscaped lawn Covered Car Porch</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process" id="process">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <p class="section-tag">How We Work</p>
+        <h2 class="section-headline">From Your First Word<br /><em>to Your Last Detail</em></h2>
+      </div>
+      <div class="process-steps">
+        <div class="step reveal-up delay-1">
+          <div class="step-num">01</div>
+          <div class="step-body">
+            <h3>The Conversation</h3>
+            <p>We meet — and we listen. Not to gather requirements, but to understand how you live, what silence feels like to you, which light you wake to. This dialogue, not a questionnaire, is the foundation of everything.</p>
+          </div>
+        </div>
+        <div class="step-line"></div>
+        <div class="step reveal-up delay-2">
+          <div class="step-num">02</div>
+          <div class="step-body">
+            <h3>The Interpretation</h3>
+            <p>Our lead designer translates your words into spatial language — mood boards, hand-drawn sketches, material palettes. Nothing is computer-generated at this stage. Every line is drawn by a human hand shaped by your voice.</p>
+          </div>
+        </div>
+        <div class="step-line"></div>
+        <div class="step reveal-up delay-3">
+          <div class="step-num">03</div>
+          <div class="step-body">
+            <h3>The Refinement</h3>
+            <p>You respond. We adjust — sometimes dramatically, never defensively. This loop continues until the design feels like a mirror held to your imagination. Only then do we permit a technical drawing to be made.</p>
+          </div>
+        </div>
+        <div class="step-line"></div>
+        <div class="step reveal-up delay-4">
+          <div class="step-num">04</div>
+          <div class="step-body">
+            <h3>The Construction</h3>
+            <p>Our builders work in silence and with rigour. Site tolerances are measured twice daily. Materials are sourced specifically for each project — no surplus from a previous job ever touches your home.</p>
+          </div>
+        </div>
+        <div class="step-line"></div>
+        <div class="step reveal-up delay-5">
+          <div class="step-num">05</div>
+          <div class="step-body">
+            <h3>The Handover</h3>
+            <p>We do not hand over keys. We walk you through every decision ever made on your behalf, explain every joint, every junction, every material choice. Your home should hold no mystery to you — only wonder.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE BREAK -->
+  <section class="quote-section reveal-up">
+    <div class="quote-inner">
+      <blockquote>
+        "A great building must begin with the unmeasurable, must go through measurable means when it is being designed, and in the end must be unmeasurable again."
+      </blockquote>
+      <cite>— Louis Kahn · <em>Our founding inspiration</em></cite>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <div class="contact-left reveal-left">
+        <p class="section-tag light">Begin Here</p>
+        <h2 class="section-headline light">Tell Us About<br /><em>Your Sky</em></h2>
+        <p class="contact-para">We do not begin with dimensions or budgets. We begin with one question: <strong>What kind of life are you trying to build?</strong></p>
+        <p class="contact-para">Write to us in whatever language feels natural — poetic, technical, vague, precise. Every word you offer becomes the raw material of something extraordinary.</p>
+        <div class="contact-details">
+          <div class="cd-item">
+            <span class="cd-label">Studio</span>
+            <span class="cd-value">Modern Designers and Builders, Kerala,TRIVANDRUM,PATHANAMTHITTA,KOTTAYAM</span>
+          </div>
+          <div class="cd-item">
+            <span class="cd-label">Correspondence</span>
+            <span class="cd-value">moderndesignersandbuilders@gmail.com</span>
+          </div>
+        </div>
+      </div>
+      <div class="contact-right reveal-right">
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" name="fname" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" name="lname" placeholder="Family name" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="location">Desired Location</label>
+            <input type="text" id="location" name="location" placeholder="City, region, or describe it" />
+          </div>
+          <div class="form-group">
+            <label for="vision">Describe Your Vision</label>
+            <textarea id="vision" name="vision" rows="5" placeholder="Use any words that feel right. There is no wrong answer here — poetry, adjectives, a memory of a home you once loved, a feeling you've been chasing. Begin anywhere." required></textarea>
+          </div>
+          <button type="submit" class="btn-submit">
+            <span class="btn-text">Send My Vision</span>
+            <span class="btn-arrow">→</span>
+          </button>
+          <div class="form-success" id="formSuccess">
+            <span>✦</span> Your vision has been received. We will write to you within two working days.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-mark">MD</span>
+        <p>Modern Designers And Builders</p>
+        <p class="footer-tagline">Architecture born entirely from you.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#philosophy">Philosophy</a>
+        <a href="#villas">Residences</a>
+        <a href="#process">Process</a>
+        <a href="#team">Designers</a>
+        <a href="#contact">Begin</a>
+      </div>
+      <div class="footer-copy">
+        <p>© 2024 Skyline Villa. All residences are uniquely commissioned works.</p>
+        <p>No portion of any design may be reproduced without consent.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
