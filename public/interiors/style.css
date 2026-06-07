@@ -931,35 +931,109 @@ cite em { font-style: italic; color: var(--smoke); font-size: .9em; text-transfo
   line-height: 1.6;
 }
 
-/* ── RESPONSIVE ───────────────────────────────── */
+
 @media (max-width: 1100px) {
-  .villa-grid { grid-template-columns: repeat(2, 1fr); }
-  .team-grid  { grid-template-columns: repeat(2, 1fr); }
+  .villa-grid   { grid-template-columns: repeat(2, 1fr); }
+  .team-grid    { grid-template-columns: repeat(2, 1fr); }
   .phil-pillars { grid-template-columns: repeat(2, 1fr); }
+  .contact-inner { gap: 4rem; }
 }
 
 @media (max-width: 900px) {
   .nav-links, .nav-cta { display: none; }
-  .nav-burger { display: flex; }
+  .nav-burger           { display: flex; }
+  .hero-content { padding-top: 5.5rem; }
+  .hero-sub     { font-size: .92rem; }
+  .hero-actions { gap: .9rem; }
   .phil-grid { grid-template-columns: 1fr; gap: 2rem; }
   .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .cd-item       { flex-direction: column; gap: .3rem; }
+  .cd-label      { min-width: unset; }
 }
 
 @media (max-width: 640px) {
-  .villa-grid  { grid-template-columns: 1fr; }
-  .team-grid   { grid-template-columns: 1fr; }
-  .phil-pillars{ grid-template-columns: 1fr; }
-  .process-steps { flex-direction: column; }
-  .step-line { width: 100%; height: 1px; align-self: auto; }
-  .form-row { grid-template-columns: 1fr; }
-  .hero-stat-strip {
-    gap: 1rem;
-    justify-content: space-between;
+  :root { --side: 1.1rem; }
+  .section-headline { font-size: clamp(1.9rem, 7.5vw, 2.8rem); }
+  .section-tag      { font-size: .65rem; }
+  .logo-text  { font-size: .88rem; }
+  .logo-mark  { width: 30px; height: 30px; font-size: .78rem; }
+  .hero-content     { padding-top: 5rem; }
+  .hero-eyebrow     { font-size: .6rem; letter-spacing: .2em; margin-bottom: 1rem; }
+  .hero-headline    { font-size: clamp(2.6rem, 10vw, 4.5rem); }
+  .hero-sub         { font-size: .88rem; margin-bottom: 2rem; max-width: 100%; }
+  .hero-actions     { flex-direction: column; align-items: flex-start; gap: .8rem; }
+  .hero-actions .btn-primary,
+  .hero-actions .btn-ghost { width: 100%; justify-content: center; }
+  .hero-scroll      { display: none; }
+  .hero-stat-strip  {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+    padding: 1.2rem 1.4rem;
+    margin: 1.5rem var(--side) 0;
   }
   .stat-div { display: none; }
-  .footer-inner { flex-direction: column; align-items: flex-start; gap: 2rem; }
+  .stat-n   { font-size: 1.5rem; }
+  .stat-l   { font-size: .58rem; }
+  .phil-pillars { grid-template-columns: 1fr; gap: 2px; }
+  .pillar       { padding: 1.8rem 1.4rem; }
+  .villa-grid   { grid-template-columns: 1fr; }
+  .vc-body      { padding: 1.5rem 1.4rem 1.8rem; }
+  .vc-name      { font-size: 1.35rem; }
+  .team-grid { grid-template-columns: 1fr; }
+  .process-steps  { flex-direction: column; }
+  .step           { min-width: unset; padding: 1.8rem 1.4rem; }
+  .step-num       { font-size: 2.8rem; }
+  .step-line      { width: 100%; height: 1px; align-self: auto; flex-shrink: 0; }
+  blockquote      { font-size: clamp(1.15rem, 4vw, 1.6rem); }
+  blockquote::before { font-size: 4rem; top: -1.2rem; left: -.4rem; }
+  .form-row       { grid-template-columns: 1fr; gap: 1rem; }
+  .contact-inner  { gap: 2.5rem; }
+  .btn-submit     { width: 100%; justify-content: center; align-self: auto; padding: 1rem; }
+  .footer-inner   { flex-direction: column; align-items: flex-start; gap: 1.8rem; }
+  .footer-brand   { flex-direction: column; align-items: flex-start; gap: .6rem; }
+  .footer-links   { gap: 1.2rem; flex-wrap: wrap; }
+  .footer-links a { font-size: .62rem; }
+  .footer-copy p  { font-size: .68rem; }
   .cursor, .cursor-follower { display: none; }
-  body { cursor: auto; }
-  .btn-submit, input, textarea { cursor: auto; }
+  body        { cursor: auto; }
+  .btn-submit,
+  input,
+  textarea    { cursor: auto; }
   .nav-burger { cursor: pointer; }
+}
+
+@media (max-width: 480px) {
+  :root { --side: .9rem; }
+
+  .hero-headline  { font-size: clamp(2.2rem, 9.5vw, 3.5rem); }
+  .section-headline { font-size: clamp(1.7rem, 7vw, 2.4rem); }
+
+  .hero-stat-strip {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .stat-n { font-size: 1.3rem; }
+
+  .vc-specs span { font-size: .55rem; padding: .25rem .6rem; }
+
+  .mm-link { font-size: 1.9rem; }
+
+  blockquote { font-size: 1.1rem; }
+  blockquote::before { display: none; }
+
+  .btn-primary,
+  .btn-ghost  { padding: .8rem 1.6rem; font-size: .72rem; }
+  .btn-submit { padding: .9rem; font-size: .72rem; }
+}
+
+@media (max-width: 360px) {
+  :root { --side: .75rem; }
+
+  .hero-headline { font-size: 2rem; }
+  .hero-stat-strip { grid-template-columns: 1fr 1fr; }
+  .stat-n        { font-size: 1.15rem; }
+
+  .logo-text { display: none; }  
 }
