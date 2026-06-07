@@ -23,13 +23,11 @@ app.use(helmet({
 app.use(cors({ origin: process.env.ALLOWED_ORIGIN || '*' }));
 app.use(express.json({ limit: '10kb' }));
 app.use(express.urlencoded({ extended: true, limit: '10kb' }));
-
 app.use('/public', express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname)));
-
-app.get('*', (_req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
-});
+app.get('/sitemap.xml', (_req, res) => {res.sendFile(path.join(__dirname, 'public', 'sitemap.xml'));});
+app.get('/robots.txt', (_req, res) => {res.sendFile(path.join(__dirname, 'public', 'robots.txt'));});
+app.get('*', (_req, res) => {res.sendFile(path.join(__dirname, 'index.html'));});
 
 app.listen(PORT, () => {
   console.log('\n');
