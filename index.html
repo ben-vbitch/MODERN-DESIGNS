@@ -83,6 +83,7 @@
           <li><a href="#process">Process</a></li>
           <li><a href="#testimonials">Testimonials</a></li>
           <li><a href="#contact" class="nav-cta">Get Consultation</a></li>
+          <li><a href="/public/admin-login.html" class="nav-admin">Admin</a></li>        
         </ul>
 
         <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
@@ -97,6 +98,7 @@
         <a href="#process"      role="menuitem">Process</a>
         <a href="#testimonials" role="menuitem">Testimonials</a>
         <a href="#contact"      role="menuitem">Get Consultation</a>
+        <a href="/public/admin-login.html" role="menuitem" class="nav-admin">Admin</a>
       </div>
     </nav>
 
@@ -105,6 +107,7 @@
         <img
           class="hero-photo"
           src="public/assets/hero.jpg"
+          data-editable-img="hero-photo"
           alt="Luxury modern architecture interior"
           fetchpriority="high"
         >
@@ -172,6 +175,7 @@
               <img
                 class="about-img"
                 src="public/assets/about.jpeg"
+                data-editable-img="about-img"
                 alt="Architectural structure by Modern Designers & Builders"
                 loading="lazy"
               >
@@ -379,7 +383,7 @@
   <a href="public/villa/" class="proj-card span2" data-cat="villa">
     <div class="p-img-w">
       <img src="public/assets/villa.jpeg"
-          alt="Skyline Villa — luxury villa project" loading="lazy">
+          alt="Skyline Villa — luxury villa project" data-editable-img="villa-main-image" loading="lazy">
 
       <div class="p-overlay">
         <div class="p-info">
@@ -398,6 +402,7 @@
           <img
             src="public/assets/int.jpeg"
             alt="Gold & Shadow — luxury interior"
+            data-editable-img="interior-image"
             loading="lazy"
           >
           <div class="p-overlay">
@@ -417,6 +422,7 @@
       <div class="p-img-w">
         <img src="public/assets/mh1.jpeg"
             alt="Casa Minimal — modern home"
+            data-editable-img="modern-image-home"
             loading="lazy">
 
         <div class="p-overlay">
@@ -434,7 +440,10 @@
     <a href="public/tradition/" class="proj-card" data-cat="commercial">
       <div class="p-img-w">
         <img src="public/assets/ktdh.jpg"
-            alt="Vertex Tower — commercial building" loading="lazy">
+            alt="Vertex Tower — commercial building"
+            loading="lazy"
+            data-editable-img="tradition-home"
+            >
         <div class="p-overlay">
           <div class="p-info">
             <span class="p-tag">Commercial</span>
@@ -801,5 +810,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
     <script src="public/js/main.js" defer></script>
+    <script src="/public/js/admin-edit.js"></script>
   </body>
   </html>

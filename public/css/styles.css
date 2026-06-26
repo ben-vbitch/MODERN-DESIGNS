@@ -1236,3 +1236,10 @@ body { cursor: none; }
   /* ─ Buttons ─ */
   .btn                   { padding: 12px 20px; font-size: 10.5px; }
 }
+.nav-admin {
+  color: var(--muted) !important;
+  font-size: 10px !important;
+  letter-spacing: 2px;
+}
+.nav-admin:hover { color: var(--text) !important; }
+.nav-admin::after { display: none !important; }

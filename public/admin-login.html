@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Login — Modern Designers & Builders</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --black:#070707;--card:#141414;--border:rgba(255,255,255,.08);
+      --gold:#C9A84C;--gold-lt:#E2C46A;--warm:#F4F1EC;--text:#555;--red:#f87171;
+    }
+    body{
+      min-height:100vh;background:var(--black);
+      font-family:'DM Sans',sans-serif;color:var(--warm);
+      display:flex;align-items:center;justify-content:center;
+      background-image:
+        radial-gradient(ellipse at 25% 60%,rgba(201,168,76,.07) 0%,transparent 55%),
+        radial-gradient(ellipse at 75% 40%,rgba(201,168,76,.05) 0%,transparent 55%);
+    }
+    .wrap{width:100%;max-width:400px;padding:0 20px}
+
+    .logo{text-align:center;margin-bottom:2.2rem}
+    .logo-mark{
+      display:inline-flex;align-items:center;justify-content:center;
+      width:48px;height:48px;background:var(--gold);color:var(--black);
+      font-family:'Playfair Display',serif;font-size:1rem;font-weight:600;
+      margin-bottom:12px;
+    }
+    .logo h1{font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:3px}
+    .logo p{font-size:.7rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--text)}
+
+    .card{
+      background:var(--card);border:1px solid var(--border);
+      padding:2rem 2rem;position:relative;overflow:hidden;
+    }
+    .card::before{
+      content:'';position:absolute;top:0;left:0;right:0;height:2px;
+      background:linear-gradient(90deg,var(--gold),#B87333);
+    }
+
+    .f-group{margin-bottom:1rem}
+    .f-group label{
+      display:block;font-size:.65rem;font-weight:600;
+      letter-spacing:2px;text-transform:uppercase;color:var(--text);margin-bottom:6px;
+    }
+    .f-group input{
+      width:100%;background:rgba(255,255,255,.03);
+      border:1px solid var(--border);color:var(--warm);
+      padding:12px 14px;font-family:'DM Sans',sans-serif;
+      font-size:.9rem;outline:none;transition:border-color .25s;
+    }
+    .f-group input:focus{border-color:var(--gold)}
+    .f-group input::placeholder{color:#333}
+
+    .btn{
+      width:100%;padding:13px;background:var(--gold);color:var(--black);
+      border:none;cursor:pointer;font-family:'DM Sans',sans-serif;
+      font-size:.75rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;
+      margin-top:.3rem;transition:background .25s,transform .2s;
+    }
+    .btn:hover{background:var(--gold-lt);transform:translateY(-1px)}
+    .btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+
+    .err{
+      margin-top:.9rem;padding:10px 13px;
+      background:rgba(248,113,113,.08);border:1px solid rgba(248,113,113,.2);
+      color:var(--red);font-size:.8rem;display:none;
+    }
+    .err.show{display:block}
+
+    footer{text-align:center;margin-top:1.5rem;font-size:.68rem;color:var(--text)}
+
+    /* Robots — hide login from search */
+    /* (also add <meta name="robots" content="noindex"> in head) */
+  </style>
+  <meta name="robots" content="noindex,nofollow"/>
+</head>
+<body>
+<div class="wrap">
+  <div class="logo">
+    <div class="logo-mark">MDB</div>
+    <h1>Admin Portal</h1>
+    <p>Modern Designers &amp; Builders</p>
+  </div>
+
+  <div class="card">
+    <form id="loginForm">
+      <div class="f-group">
+        <label>Email</label>
+        <input type="email" id="email" placeholder="admin@example.com"
+               required autocomplete="email"/>
+      </div>
+      <div class="f-group">
+        <label>Password</label>
+        <input type="password" id="password" placeholder="••••••••"
+               required autocomplete="current-password"/>
+      </div>
+      <button type="submit" class="btn" id="loginBtn">Sign In</button>
+      <div class="err" id="errBox"></div>
+    </form>
+  </div>
+
+  <footer>Secure access only &nbsp;·&nbsp; MDB © 2024</footer>
+</div>
+
+<script>
+  /* If already logged in, skip to edit mode */
+  if (localStorage.getItem('mdb_token')) {
+    window.location.href = '/';
+  }
+
+  const form   = document.getElementById('loginForm');
+  const errBox = document.getElementById('errBox');
+  const btn    = document.getElementById('loginBtn');
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    errBox.classList.remove('show');
+    btn.disabled    = true;
+    btn.textContent = 'Signing in…';
+
+    const email    = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value;
+
+    try {
+      const res  = await fetch('/api/admin/login', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body:    JSON.stringify({ email, password }),
+      });
+      const data = await res.json();
+
+      if (!res.ok) throw new Error(data.error || 'Login failed');
+
+      localStorage.setItem('mdb_token', data.token);
+      /* Go to whichever page the admin wants to edit — default index */
+      window.location.href = '/';
+    } catch (err) {
+      errBox.textContent = err.message;
+      errBox.classList.add('show');
+      btn.disabled    = false;
+      btn.textContent = 'Sign In';
+    }
+  });
+</script>
+</body>
+</html>

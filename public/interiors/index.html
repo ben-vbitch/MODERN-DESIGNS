@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Custom interiors — Crafted Upon Your Vision</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/png" href="public/assets/logo.png">
+  <link rel="icon" type="image/png" href="/public/assets/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&family=Playfair+Display:ital@1&display=swap" rel="stylesheet" />
@@ -51,8 +51,11 @@
   <!-- HERO -->
   <section class="hero" id="hero">
     <div class="hero-bg">
-      <img src="../assets/inthome.jpg" alt="Skyline Villa exterior" class="hero-img" onerror="this.style.display='none'" />
-      <div class="hero-overlay"></div>
+<img
+src="../assets/inthome.jpg"
+class="hero-img"
+data-editable-img="hero-image"
+>        <div class="hero-overlay"></div>
       <div class="hero-grain"></div>
     </div>
     <div class="hero-content">
@@ -160,8 +163,12 @@ We create bespoke interiors that blend elegance, functionality, and craftsmanshi
         <!-- Card 1 -->
         <article class="villa-card reveal-up delay-1">
           <div class="vc-img-wrap">
-            <img src="../assets/int.jpeg" alt="The Meridian" onerror="this.parentElement.classList.add('img-fallback')" />
-            <div class="vc-tag">Cliff-Edge · 4 Bed</div>
+      <img
+        src="../assets/int.jpeg"
+        alt="The Meridian"
+        data-editable-img="project1-image">
+        onerror="this.parentElement.classList.add('img-fallback')" />
+                <div class="vc-tag">Cliff-Edge · 4 Bed</div>
           </div>
           <div class="vc-body">
             <h3 class="vc-name">Contemporary Living Suite</h3>
@@ -179,8 +186,8 @@ We create bespoke interiors that blend elegance, functionality, and craftsmanshi
         <!-- Card 2 -->
         <article class="villa-card reveal-up delay-2">
           <div class="vc-img-wrap">
-            <img src="../assets/int2.jpeg" alt="Casa Nimbus" onerror="this.parentElement.classList.add('img-fallback')" />
-            <div class="vc-tag">Hillside · 6 Bed</div>
+              <img src="../assets/int2.jpeg"alt="Casa Nimbus"data-editable-img="project2-image"onerror="this.parentElement.classList.add('img-fallback')" />
+              <div class="vc-tag">Hillside · 6 Bed</div>
           </div>
           <div class="vc-body">
             <h3 class="vc-name">Urban Sanctuary </h3>
@@ -198,8 +205,8 @@ We create bespoke interiors that blend elegance, functionality, and craftsmanshi
         <!-- Card 3 -->
         <article class="villa-card reveal-up delay-3">
           <div class="vc-img-wrap">
-            <img src="../assets/int3.jpeg" alt="Zephyr House" onerror="this.parentElement.classList.add('img-fallback')" />
-            <div class="vc-tag">LUXURY CLASSIC· 5 Bed</div>
+          <img src="../assets/int3.jpeg"alt="Zephyr House"data-editable-img="project3-image"onerror="this.parentElement.classList.add('img-fallback')" />
+              <div class="vc-tag">LUXURY CLASSIC· 5 Bed</div>
           </div>
           <div class="vc-body">
             <h3 class="vc-name">Luxury Residence Interior</h3>
@@ -358,5 +365,6 @@ We create bespoke interiors that blend elegance, functionality, and craftsmanshi
 
 
   <script src="script.js"></script>
+  <script src="/public/js/admin-edit.js"></script>
 </body>
 </html>
