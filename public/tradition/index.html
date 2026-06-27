@@ -8,7 +8,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
   <style>
-    /* ─── TOKENS ─────────────────────────────────── */
     :root {
       --cream:       #f5efe4;
       --parchment:   #ede3d0;
@@ -31,7 +30,6 @@
       --ease:        cubic-bezier(.25,.46,.45,.94);
     }
 
-    /* ─── RESET ──────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; font-size: 16px; }
     body {
@@ -46,12 +44,10 @@
     a { text-decoration: none; color: inherit; }
     ul { list-style: none; }
 
-    /* ─── SCROLLBAR ──────────────────────────────── */
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: var(--parchment); }
     ::-webkit-scrollbar-thumb { background: var(--terracotta); border-radius: 3px; }
 
-    /* ─── CURSOR ─────────────────────────────────── */
     .cursor {
       position: fixed; width: 10px; height: 10px;
       background: var(--terracotta); border-radius: 50%;
@@ -68,7 +64,6 @@
       transition: width .35s var(--ease), height .35s var(--ease), opacity .35s;
     }
 
-    /* ─── NAV ────────────────────────────────────── */
     .nav {
       position: fixed; top: 0; left: 0; width: 100%; z-index: 900;
       height: var(--nav-h);
@@ -80,9 +75,7 @@
       background: rgba(30,20,10,.96);
       box-shadow: 0 2px 30px rgba(0,0,0,.4);
     }
-    .nav-logo {
-      display: flex; align-items: center; gap: 12px;
-    }
+    .nav-logo { display: flex; align-items: center; gap: 12px; }
     .logo-mark {
       width: 42px; height: 42px;
       background: var(--terracotta);
@@ -97,9 +90,7 @@
       font-size: .85rem; letter-spacing: .25em; text-transform: uppercase;
       color: var(--white);
     }
-    .nav-links {
-      display: flex; gap: 2.5rem;
-    }
+    .nav-links { display: flex; gap: 2.5rem; }
     .nav-links a {
       font-family: var(--ff-body); font-size: .8rem;
       letter-spacing: .2em; text-transform: uppercase;
@@ -132,7 +123,6 @@
       background: var(--white); transition: transform .3s var(--ease);
     }
 
-    /* ─── MOBILE MENU ────────────────────────────── */
     .mobile-menu {
       position: fixed; inset: 0; background: var(--dark2);
       z-index: 800; display: flex; align-items: center; justify-content: center;
@@ -148,22 +138,18 @@
     }
     .mobile-menu a:hover { color: var(--gold-light); }
 
-    /* ─── HERO ───────────────────────────────────── */
     .hero {
       position: relative; min-height: 100vh;
       display: flex; align-items: center;
       overflow: hidden;
     }
-    .hero-bg {
-      position: absolute; inset: 0; z-index: 0;
-    }
+    .hero-bg { position: absolute; inset: 0; z-index: 0; }
     .hero-img {
       width: 100%; height: 100%;
       object-fit: cover; object-position: center;
       transform-origin: center;
       filter: brightness(.65) saturate(.9);
     }
-    /* Fallback gradient for hero when no image */
     .hero-bg::before {
       content: '';
       position: absolute; inset: 0; z-index: 1;
@@ -183,13 +169,11 @@
         rgba(10,5,2,.75) 100%
       );
     }
-    /* Kerala kolam grain texture overlay */
     .hero-grain {
       position: absolute; inset: 0; z-index: 3; opacity: .04;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
       background-size: 180px;
     }
-    /* Kerala border motif top */
     .hero::before {
       content: '';
       position: absolute; top: var(--nav-h); left: 0; right: 0;
@@ -278,7 +262,6 @@
     }
     .stat-div { width: 1px; background: rgba(255,255,255,.1); margin: 1rem 0; }
 
-    /* ─── MARQUEE ─────────────────────────────────── */
     .marquee-section {
       background: var(--dark2);
       padding: .9rem 0; overflow: hidden;
@@ -296,7 +279,6 @@
     }
     @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
 
-    /* ─── REVEALS ────────────────────────────────── */
     .reveal-up, .reveal-left, .reveal-right {
       opacity: 0; transition: opacity .9s var(--ease), transform .9s var(--ease);
     }
@@ -312,7 +294,6 @@
     .delay-4 { transition-delay: .5s; }
     .delay-5 { transition-delay: .64s; }
 
-    /* ─── SHARED ─────────────────────────────────── */
     .container { max-width: 1200px; margin: 0 auto; padding: 0 5vw; }
     .section-tag {
       font-family: var(--ff-body); font-size: .7rem;
@@ -344,7 +325,6 @@
     }
     .section-header { text-align: center; margin-bottom: 4rem; }
 
-    /* ─── DECORATIVE BORDER ──────────────────────── */
     .kerala-border {
       height: 16px;
       background: repeating-linear-gradient(
@@ -361,7 +341,6 @@
       opacity: .35;
     }
 
-    /* ─── PHILOSOPHY ─────────────────────────────── */
     .philosophy {
       padding: 8rem 0;
       background: var(--white);
@@ -371,7 +350,6 @@
       content: ''; position: absolute; top: 0; left: 5vw; right: 5vw; height: 1px;
       background: linear-gradient(90deg, transparent, var(--gold), transparent);
     }
-    /* Kolam decorative background */
     .philosophy::after {
       content: ''; position: absolute; right: -80px; top: 50%;
       transform: translateY(-50%);
@@ -384,10 +362,7 @@
       gap: 5rem; align-items: start;
       margin-bottom: 4rem;
     }
-    .phil-left .section-headline {
-      margin-top: .8rem;
-    }
-    /* Kerala motif accent beside heading */
+    .phil-left .section-headline { margin-top: .8rem; }
     .phil-left::after {
       content: '◆ ◇ ◆';
       display: block; margin-top: 2rem;
@@ -428,10 +403,7 @@
     }
     .pillar:hover { border-color: var(--gold); transform: translateY(-6px); box-shadow: 0 12px 40px rgba(0,0,0,.08); }
     .pillar:hover::before { transform: scaleX(1); }
-    .pillar-icon {
-      font-size: 1.6rem; color: var(--gold);
-      margin-bottom: 1rem;
-    }
+    .pillar-icon { font-size: 1.6rem; color: var(--gold); margin-bottom: 1rem; }
     .pillar h3 {
       font-family: var(--ff-display);
       font-size: .82rem; letter-spacing: .15em;
@@ -440,7 +412,6 @@
     }
     .pillar p { font-size: .9rem; line-height: 1.7; color: var(--text-light); }
 
-    /* ─── HOMES / PROJECTS ───────────────────────── */
     .villas {
       padding: 8rem 0;
       background: var(--dark2);
@@ -477,7 +448,6 @@
       transition: transform .7s var(--ease);
     }
     .villa-card:hover .vc-img-wrap img { transform: scale(1.07); }
-    /* Fallback for missing images */
     .vc-img-wrap.img-fallback {
       background: linear-gradient(135deg, #2c1c0e 0%, #4a2c15 50%, #3a2010 100%);
     }
@@ -503,16 +473,13 @@
       color: var(--gold-light); margin-bottom: 1rem;
     }
     .vc-desc { font-size: .9rem; line-height: 1.75; color: rgba(255,255,255,.5); margin-bottom: 1.4rem; }
-    .vc-specs {
-      display: flex; flex-wrap: wrap; gap: .5rem;
-    }
+    .vc-specs { display: flex; flex-wrap: wrap; gap: .5rem; }
     .vc-specs span {
       font-size: .65rem; letter-spacing: .15em; text-transform: uppercase;
       border: 1px solid rgba(184,146,47,.3); color: var(--gold-light);
       padding: .25rem .7rem;
     }
 
-    /* ─── PROCESS ────────────────────────────────── */
     .process {
       padding: 8rem 0;
       background: var(--cream);
@@ -548,7 +515,6 @@
       opacity: .3; align-self: stretch; margin-top: 2.5rem;
     }
 
-    /* ─── QUOTE ──────────────────────────────────── */
     .quote-section {
       padding: 7rem 5vw;
       background: var(--dark);
@@ -561,7 +527,6 @@
       font-family: Georgia, serif; line-height: 1;
       pointer-events: none;
     }
-    /* Kerala pookalam ring decoration */
     .quote-section::after {
       content: '';
       position: absolute; top: 50%; right: -100px;
@@ -584,7 +549,6 @@
       color: var(--gold-light);
     }
 
-    /* ─── CONTACT ────────────────────────────────── */
     .contact {
       padding: 8rem 0;
       background: var(--dark2);
@@ -592,8 +556,7 @@
     }
     .contact::before {
       content: ''; position: absolute; inset: 0;
-      background:
-        radial-gradient(ellipse 60% 80% at 0% 50%, rgba(192,103,58,.08) 0%, transparent 60%);
+      background: radial-gradient(ellipse 60% 80% at 0% 50%, rgba(192,103,58,.08) 0%, transparent 60%);
       pointer-events: none;
     }
     .contact-inner {
@@ -615,7 +578,6 @@
     }
     .cd-value { font-size: .9rem; color: rgba(255,255,255,.7); line-height: 1.6; }
 
-    /* Form */
     .contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
     .form-group { display: flex; flex-direction: column; gap: .45rem; }
@@ -663,7 +625,6 @@
     }
     .form-success.visible { opacity: 1; }
 
-    /* ─── FOOTER ─────────────────────────────────── */
     .footer {
       background: var(--dark);
       border-top: 1px solid rgba(184,146,47,.15);
@@ -691,7 +652,6 @@
     .footer-copy { text-align: right; }
     .footer-copy p { font-size: .72rem; color: rgba(255,255,255,.3); line-height: 1.7; letter-spacing: .05em; }
 
-    /* ─── RESPONSIVE ─────────────────────────────── */
     @media (max-width: 1024px) {
       .phil-pillars { grid-template-columns: repeat(2,1fr); }
       .villa-grid { grid-template-columns: repeat(2,1fr); }
@@ -719,11 +679,9 @@
 </head>
 <body>
 
-  <!-- CURSOR -->
   <div class="cursor" id="cursor"></div>
   <div class="cursor-follower" id="cursorFollower"></div>
 
-  <!-- NAV -->
   <nav class="nav" id="nav">
     <div class="nav-logo">
       <span class="logo-mark">MD</span>
@@ -746,7 +704,6 @@
     </button>
   </nav>
 
-  <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobileMenu">
     <ul>
       <li><a href="#philosophy" class="mm-link">Heritage</a></li>
@@ -756,10 +713,9 @@
     </ul>
   </div>
 
-  <!-- HERO -->
   <section class="hero" id="hero">
     <div class="hero-bg">
-      <img src="../assets/ktdh.jpg" alt="Kerala Traditional Home" class="hero-img" onerror="this.style.display='none'" />
+      <img src="../assets/ktdh.jpg" alt="Kerala Traditional Home" class="hero-img" data-editable-img="ktdh_hero_image" onerror="this.style.display='none'" />
       <div class="hero-overlay"></div>
       <div class="hero-grain"></div>
     </div>
@@ -791,7 +747,6 @@
     </div>
   </section>
 
-  <!-- MARQUEE -->
   <section class="marquee-section">
     <div class="marquee-track">
       <span>Traditional Kerala Architecture &nbsp;·&nbsp; </span>
@@ -813,7 +768,6 @@
     </div>
   </section>
 
-  <!-- PHILOSOPHY -->
   <section class="philosophy" id="philosophy">
     <div class="container">
       <div class="phil-grid">
@@ -860,7 +814,6 @@
 
   <div class="kerala-border"></div>
 
-  <!-- PROJECTS -->
   <section class="villas" id="villas">
     <div class="container">
       <div class="section-header reveal-up">
@@ -870,10 +823,10 @@
       </div>
       <div class="villa-grid">
 
-        <!-- Card 1 -->
         <article class="villa-card reveal-up delay-1">
           <div class="vc-img-wrap">
-            <img src="../assets/ktd1.jpeg" alt="Tharavadu Residence" onerror="this.parentElement.classList.add('img-fallback')" />
+            <img src="../assets/ktd1.jpeg" alt="Tharavadu Residence" data-editable-img="ktd1_image" onerror="this.parentElement.classList.add('img-fallback')" />
+            <div class="vc-tag">Nalukettu · 4 Bed</div>
           </div>
           <div class="vc-body">
             <h3 class="vc-name">The Tharavadu Residence</h3>
@@ -888,10 +841,10 @@
           </div>
         </article>
 
-        <!-- Card 2 -->
         <article class="villa-card reveal-up delay-2">
           <div class="vc-img-wrap">
-            <img src="../assets/ktd2.jpeg" alt="Padippura Villa" onerror="this.parentElement.classList.add('img-fallback')" />
+            <img src="../assets/ktd2.jpeg" alt="Padippura Villa" data-editable-img="ktd2_image" onerror="this.parentElement.classList.add('img-fallback')" />
+            <div class="vc-tag">Ancestral · 5 Bed</div>
           </div>
           <div class="vc-body">
             <h3 class="vc-name">Padippura Villa</h3>
@@ -906,10 +859,9 @@
           </div>
         </article>
 
-        <!-- Card 3 -->
         <article class="villa-card reveal-up delay-3">
           <div class="vc-img-wrap">
-            <img src="../assets/ktd3.jpg" alt="Ettukettu Manor" onerror="this.parentElement.classList.add('img-fallback')" />
+            <img src="../assets/ktd3.jpg" alt="Ettukettu Manor" data-editable-img="ktd3_image" onerror="this.parentElement.classList.add('img-fallback')" />
             <div class="vc-tag">Ettukettu · 5 Bed</div>
           </div>
           <div class="vc-body">
@@ -929,7 +881,6 @@
     </div>
   </section>
 
-  <!-- PROCESS -->
   <section class="process" id="process">
     <div class="container">
       <div class="section-header reveal-up">
@@ -980,7 +931,6 @@
     </div>
   </section>
 
-  <!-- QUOTE BREAK -->
   <section class="quote-section reveal-up">
     <div class="quote-inner">
       <blockquote>
@@ -990,7 +940,6 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section class="contact" id="contact">
     <div class="contact-inner">
       <div class="contact-left reveal-left">
@@ -1053,7 +1002,6 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-brand">
@@ -1077,5 +1025,7 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="/public/js/admin-edit.js"></script>
+
 </body>
 </html>
